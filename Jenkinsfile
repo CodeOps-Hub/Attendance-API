@@ -1,0 +1,17 @@
+@Library("my-shared-library") _
+
+
+
+def Attandance_CI = new org.avengers.template.Attandance_CI.attandanceCI()
+    
+node {
+    
+    def url = 'https://github.com/CodeOps-Hub/attendance-api.git'
+    def branch = 'main'
+    def creds = 'vikram445'
+    def depVersion = '9.0.9'
+    def javaVersion = '17'
+   
+    Attandance_CI.call(url, creds, branch, depVersion, javaVersion)
+   
+    }
